@@ -27,9 +27,11 @@ import {
 import 'ant-design-vue/dist/antd.css'
 import App from './App.vue'
 import store from './store'
+import router from './router'
 
-createApp(App)
-  .use(store)
+let app = createApp(App).use(store).use(router)
+
+app
   .use(Layout)
   .use(LayoutHeader)
   .use(Menu)
@@ -53,4 +55,5 @@ createApp(App)
   .use(DatePicker)
   .use(TimePicker)
   .use(Upload)
-  .mount('#app')
+
+app.mount('#app')

@@ -104,7 +104,7 @@ import TimeInput from '@/components/TimeInput.vue'
 import FileInput from '@/components/FileInput.vue'
 
 export default {
-  name: 'FormBuilder',
+  name: 'Builder',
   components: {
     TextInput,
     MultipleChoicesInput,

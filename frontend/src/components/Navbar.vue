@@ -7,15 +7,31 @@
       :default-selected-keys="['1']"
       id="navbar"
     >
-      <a-menu-item key="1"> Home </a-menu-item>
-      <a-menu-item key="2"> Forms </a-menu-item>
+      <router-link to="/">
+        <a-menu-item key="1"> Home </a-menu-item>
+      </router-link>
+      <div>
+        <router-link to="/Forms">
+          <a-menu-item key="2"> Forms </a-menu-item>
+        </router-link>
+      </div>
     </a-menu>
   </a-layout-header>
 </template>
 
 <script>
 export default {
-  name: 'custom-navbar'
+  name: 'custom-navbar',
+  computed: {
+    user() {
+      return this.$store.user
+    }
+  },
+  methods: {
+    handleLogout() {
+      this.$store.dispatch('signOutAction')
+    }
+  }
 }
 </script>
 
@@ -36,5 +52,11 @@ export default {
 
 #navbar {
   line-height: 64px;
+  display: flex;
+  justify-content: end;
+}
+
+#navbar div {
+  display: flex;
 }
 </style>

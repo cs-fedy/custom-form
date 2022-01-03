@@ -3,7 +3,7 @@
     <navbar />
     <a-layout-content id="layout-content">
       <div id="content">
-        <Content />
+        <slot></slot>
       </div>
     </a-layout-content>
   </a-layout>
@@ -11,11 +11,10 @@
 
 <script>
 import Navbar from '@/components/Navbar.vue'
-import Content from '@/components/Content.vue'
 export default {
+  name: 'Layout',
   components: {
     Navbar,
-    Content
   }
 }
 </script>
@@ -25,7 +24,6 @@ export default {
   padding: 0 50px;
   margin: 100px 0 40px;
 }
-
 #content {
   background: #fff;
   padding: 24px;

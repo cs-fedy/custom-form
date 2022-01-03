@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <layout>
     <a-form>
       <h3 class="form-title">{{ formDetails.formTitle }}</h3>
       <p class="form-description" v-if="formDetails.formDescription">
@@ -35,7 +35,7 @@
         <a-button class="btn__full-size" type="primary">submit</a-button>
       </a-form-item>
     </a-form>
-  </div>
+  </layout>
 </template>
 
 <script>
@@ -44,10 +44,12 @@ import TextSection from '@/components/TextSection.vue'
 import DateSection from '@/components/DateSection.vue'
 import TimeSection from '@/components/TimeSection.vue'
 import FileSection from '@/components/FileSection.vue'
+import Layout from '@/layout/Layout.vue'
 
 export default {
   name: 'FormPreview',
   components: {
+    Layout,
     TextSection,
     MultipleChoicesSection,
     DateSection,
